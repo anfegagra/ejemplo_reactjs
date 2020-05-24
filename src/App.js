@@ -10,10 +10,13 @@ import './App.css';
 
 class Hello extends Component {
   render() {
+    const textoSegunBool = this.props.isActive ? 'On' : 'Off';
+
     return (
       <div>
         <h2>{this.props.title}</h2>
         <p>{this.props.number}</p>
+        <p>{textoSegunBool}</p>
       </div>
     );
   }
@@ -25,6 +28,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Hello
+          isActive
           title='Hola mundo en ReactJS'
           number={10}
         />
