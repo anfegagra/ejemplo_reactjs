@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+function Hello(props) {
+  return <h2>{props.oe}</h2>;
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h2>Hola mundo en ReactJS</h2>
+        <Hello oe='Hola mundo en ReactJS' />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
