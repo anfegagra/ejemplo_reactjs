@@ -10,7 +10,7 @@ import './App.css';
 
 class Hello extends Component {
   render() {
-    return <h2>{this.props.oe}</h2>;
+    return <h2>{this.props.title}</h2>;
   }
 }
 
