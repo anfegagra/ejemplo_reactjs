@@ -11,12 +11,14 @@ import './App.css';
 class Hello extends Component {
   render() {
     const textoSegunBool = this.props.isActive ? 'On' : 'Off';
+    const mappedNumbers = this.props.arrayOfNumbers.map(n => n * 2);
 
     return (
       <div>
         <h2>{this.props.title}</h2>
         <p>{this.props.number}</p>
         <p>{textoSegunBool}</p>
+        <p>{mappedNumbers.join(', ')}</p>
       </div>
     );
   }
@@ -28,6 +30,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Hello
+          arrayOfNumbers={[2, 5, 8]}
           isActive
           title='Hola mundo en ReactJS'
           number={10}
