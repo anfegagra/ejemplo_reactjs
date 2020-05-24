@@ -19,6 +19,10 @@ class Hello extends Component {
         <p>{this.props.number}</p>
         <p>{textoSegunBool}</p>
         <p>{mappedNumbers.join(', ')}</p>
+        <div>
+          <p>{this.props.objectWithInfo.key}</p>
+          <p>{this.props.objectWithInfo.key2}</p>
+        </div>
       </div>
     );
   }
@@ -30,6 +34,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Hello
+          objectWithInfo={{ key: 'First value', key2: 'Second value' }}
           arrayOfNumbers={[2, 5, 8]}
           isActive
           title='Hola mundo en ReactJS'
