@@ -22,7 +22,6 @@ class Hello extends Component {
 
     const textoSegunBool = isActive ? 'On' : 'Off';
     const mappedNumbers = arrayOfNumbers.map(multiply);
-    const counter = 0;
 
     return (
       <div>
@@ -41,9 +40,14 @@ class Hello extends Component {
 }
 
 class Counter extends Component {
+
+  constructor() {
+    super();
+    this.state = {counter: 1};
+    
+  }
   render() {
-    const counter = 0;
-    return <p>{counter}</p>
+    return <p>{this.state.counter}</p>
   }
 }
 
