@@ -43,12 +43,13 @@ class Counter extends Component {
 
   constructor() {
     super();
-    this.state = {counter: 1};
-    
+    this.state = {counter: 1};    
   }
+
   render() {
     return <p>{this.state.counter}</p>
   }
+  
 }
 
 function App() {
