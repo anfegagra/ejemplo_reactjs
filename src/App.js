@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import logo from './logo.svg';
 
 // function Hello(props) {
 //   return <h2>{props.oe}</h2>;
@@ -10,18 +10,27 @@ import './App.css';
 
 class Hello extends Component {
   render() {
-    const textoSegunBool = this.props.isActive ? 'On' : 'Off';
-    const mappedNumbers = this.props.arrayOfNumbers.map(n => n * 2);
+    const {
+      isActive,
+      arrayOfNumbers,
+      title,
+      number,
+      objectWithInfo,
+      multiply
+    } = this.props;
+
+    const textoSegunBool = isActive ? 'On' : 'Off';
+    const mappedNumbers = arrayOfNumbers.map(multiply);
 
     return (
       <div>
-        <h2>{this.props.title}</h2>
-        <p>{this.props.number}</p>
+        <h2>{title}</h2>
+        <p>{number}</p>
         <p>{textoSegunBool}</p>
         <p>{mappedNumbers.join(', ')}</p>
         <div>
-          <p>{this.props.objectWithInfo.key}</p>
-          <p>{this.props.objectWithInfo.key2}</p>
+          <p>{objectWithInfo.key}</p>
+          <p>{objectWithInfo.key2}</p>
         </div>
       </div>
     );
@@ -39,6 +48,7 @@ function App() {
           isActive
           title='Hola mundo en ReactJS'
           number={10}
+          multiply={(number) => number * 4}
         />
       </header>
     </div>
