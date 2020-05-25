@@ -50,9 +50,15 @@ class Counter extends Component {
   }
 
   render() {
-    return <p>{this.state.counter}</p>
+    return <CounterNumber number={this.state.counter} />
   }
 
+}
+
+class CounterNumber extends Component {
+  render() {
+    return <p>{this.props.number}</p>
+  }
 }
 
 function App() {
