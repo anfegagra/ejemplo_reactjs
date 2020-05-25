@@ -40,9 +40,9 @@ class Hello extends Component {
 }
 
 class Counter extends Component {
-  constructor() {
-    super();
-    this.state = { counter: 1 };
+  constructor(props) {
+    super(props);
+    this.state = { counter: this.props.initialCounter };
     setInterval(() => {
       this.setState({ counter: this.state.counter + 1 });
     }, 1000);
@@ -53,6 +53,10 @@ class Counter extends Component {
     return <CounterNumber number={this.state.counter} />
   }
 
+}
+
+Counter.defaultProps = {
+  initialCounter: 0
 }
 
 class CounterNumber extends Component {
@@ -75,7 +79,7 @@ function App() {
           multiply={(number) => number * 4}
           mainTitle={<h1>Este es el título principal</h1>}
         />
-        <Counter />
+        <Counter initialCounter={100} />
       </header>
     </div>
   );
