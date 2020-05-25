@@ -40,8 +40,14 @@ class Hello extends Component {
 }
 
 class Counter extends Component {
+  constructor() {
+    super();
+    this.state = { counter: 1 };
+    setInterval(() => {
+      this.setState({ counter: this.state.counter + 1 });
+    }, 1000);
 
-  state = { counter: 1 };
+  }
 
   render() {
     return <p>{this.state.counter}</p>
