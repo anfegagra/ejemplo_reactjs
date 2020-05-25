@@ -16,7 +16,8 @@ class Hello extends Component {
       title,
       number,
       objectWithInfo,
-      multiply
+      multiply,
+      mainTitle
     } = this.props;
 
     const textoSegunBool = isActive ? 'On' : 'Off';
@@ -24,6 +25,7 @@ class Hello extends Component {
 
     return (
       <div>
+        {mainTitle}
         <h2>{title}</h2>
         <p>{number}</p>
         <p>{textoSegunBool}</p>
@@ -49,6 +51,7 @@ function App() {
           title='Hola mundo en ReactJS'
           number={10}
           multiply={(number) => number * 4}
+          mainTitle={<h1>Este es el título principal</h1>}
         />
       </header>
     </div>
