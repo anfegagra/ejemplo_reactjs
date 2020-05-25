@@ -22,6 +22,7 @@ class Hello extends Component {
 
     const textoSegunBool = isActive ? 'On' : 'Off';
     const mappedNumbers = arrayOfNumbers.map(multiply);
+    const counter = 0;
 
     return (
       <div>
@@ -39,6 +40,13 @@ class Hello extends Component {
   }
 }
 
+class Counter extends Component {
+  render() {
+    const counter = 0;
+    return <p>{counter}</p>
+  }
+}
+
 function App() {
   return (
     <div className="App">
@@ -53,6 +61,7 @@ function App() {
           multiply={(number) => number * 4}
           mainTitle={<h1>Este es el título principal</h1>}
         />
+        <Counter />
       </header>
     </div>
   );
